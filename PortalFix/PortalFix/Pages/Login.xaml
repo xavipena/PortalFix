@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"  
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:viewmodels="clr-namespace:PortalFix.ViewModels" 
+             xmlns:xfFlipViewControl="clr-namespace:PortalFix"
+             x:DataType="viewmodels:LoginViewModel"
+             x:Class="PortalFix.Pages.Login"
+             BackgroundImageSource="login_3.png">
+    <ContentPage.Content
+        NavigationPage.HasNavigationBar="False">
+        <StackLayout Orientation="Vertical" Padding="30" Spacing="40">
+            <BoxView HeightRequest="50"/>
+            <Image HorizontalOptions="Center" WidthRequest="300" Source="perelada.png"/>
+            <Image HorizontalOptions="Center" WidthRequest="300" Source="wineissocial.png"/>
+            <BoxView HeightRequest="50"/>
+
+            <StackLayout Orientation="Vertical" Spacing="10">
+                        <Frame BackgroundColor="LightGray" 
+                           HasShadow="False" 
+                           Opacity=".5"
+                           CornerRadius="10">
+                            <StackLayout Orientation="Vertical" Spacing="10">
+                                <Label Text="{Binding WelcomeText}"
+                                   FontSize="25"
+                                   HorizontalOptions="Center" 
+                                   IsVisible="{Binding IsNotLogged}"/>
+                                <Entry x:Name="Password" 
+                                   Text="{Binding Password}" 
+                                   Placeholder="Entra el PIN"   
+                                   PlaceholderColor="Gray" 
+                                   HeightRequest="50" WidthRequest="150"
+                                   IsPassword="True"  
+                                   TextColor="Black"
+                                   FontSize="25"
+                                   HorizontalOptions="Center"  
+                                   IsVisible="{Binding IsNotLogged}"/>
+                            </StackLayout>
+                        </Frame>
+                </StackLayout>
+            <ImageButton x:Name="btnGo" Margin="10,0,10,0"
+                         Source="login_lock.png" 
+                         BackgroundColor="Transparent"
+                         WidthRequest="100"
+                         HeightRequest="93"
+                         FlexLayout.AlignSelf="Center"
+                         FlexLayout.Grow="1"
+                         Aspect="AspectFit" />
+            <BoxView HeightRequest="200"/>
+            <Label Text="Copyright C 2021, Grup Peralada"
+                   FontSize="10"
+                   TextColor="White"
+                   HorizontalOptions="Center" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>  

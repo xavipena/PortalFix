@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:model="clr-namespace:PortalFix"
+             xmlns:viewModel="clr-namespace:PortalFix.ViewModels" 
+             x:DataType="viewModel:DetailsViewModel"
+             x:Class="PortalFix.Pages.Details">
+    <ContentPage.Content>
+        <StackLayout Margin="20,35,20,25"
+                     Orientation="Vertical"
+                     HorizontalOptions="Center">
+            <Label Text="{Binding PageTitle}" 
+                   FontSize="40"
+                   HorizontalOptions="Center"/>
+            <Label Text="{Binding PageSubTitle}" 
+                   FontSize="30"
+                   HorizontalOptions="Center"/>
+            <Label Text="{Binding InfoLine}" 
+                   FontSize="20"
+                   HorizontalOptions="Center"/>
+            <BoxView HeightRequest="20"/>
+            <Label Text="Detalles" 
+                   FontSize="20" FontAttributes="Bold"
+                   HorizontalOptions="Start"/>
+            <Frame CornerRadius="10" 
+                    OutlineColor="CadetBlue" 
+                    BackgroundColor="LightBlue"
+                    IsClippedToBounds="True"
+                    Padding="0"
+                    Margin="0,5,0,5">
+                <Label Text="{Binding PageDetail}" 
+                   FontSize="16"
+                       Margin="20,15,20,15"
+                   HorizontalOptions="StartAndExpand"/>
+            </Frame>
+            <Label Text="Resolución" 
+                   FontSize="20" FontAttributes="Bold"
+                   HorizontalOptions="Start"/>
+            <Frame CornerRadius="10" 
+                    OutlineColor="CadetBlue" 
+                    BackgroundColor="LightBlue"
+                    IsClippedToBounds="True"
+                    Padding="0"
+                    Margin="0,5,0,5">
+                <Label Text="{Binding PageSolution}" 
+                   FontSize="16"
+                   Margin="20,15,20,15"
+                   HorizontalOptions="StartAndExpand"/>
+            </Frame>
+            <StackLayout Margin="20,35,20,25"
+                     Orientation="Horizontal"
+                     HorizontalOptions="Center">
+                <ImageButton Margin="0,0,10,0"
+                         Source="mail.png" 
+                         BackgroundColor="Transparent"
+                         WidthRequest="80"
+                         HeightRequest="80"
+                         FlexLayout.AlignSelf="Center"
+                         FlexLayout.Grow="1"
+                         Clicked="ImageButtonMail_Clicked"
+                         Aspect="AspectFit" />
+                <ImageButton Margin="0,0,10,0"
+                             Source="OK.png" 
+                             BackgroundColor="Transparent"
+                             WidthRequest="80"
+                             HeightRequest="80"
+                             FlexLayout.AlignSelf="Center"
+                             FlexLayout.Grow="1"
+                             Clicked="ImageButtonOK_Clicked"
+                             Aspect="AspectFit" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
+    

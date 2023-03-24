@@ -1,0 +1,493 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://perelada.com/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://perelada.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://perelada.com/">
+      <s:element name="FixGetCategories">
+        <s:complexType />
+      </s:element>
+      <s:element name="FixGetCategoriesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FixGetCategoriesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FixGetIncidentlist">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="actor" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FixGetIncidentlistResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FixGetIncidentlistResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FixGetIncident">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="actor" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="incident" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FixGetIncidentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FixGetIncidentResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FixSendNewIncident">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="body" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FixSendNewIncidentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="FixSendNewIncidentResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FixGetSalespersons">
+        <s:complexType />
+      </s:element>
+      <s:element name="FixGetSalespersonsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FixGetSalespersonsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HrsValidateUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="user" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pass" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HrsValidateUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HrsValidateUserResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HrsGetDepartments">
+        <s:complexType />
+      </s:element>
+      <s:element name="HrsGetDepartmentsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HrsGetDepartmentsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HrsGetProjects">
+        <s:complexType />
+      </s:element>
+      <s:element name="HrsGetProjectsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HrsGetProjectsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HrsGetTasks">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="project" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HrsGetTasksResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HrsGetTasksResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HrsGetHours">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="user" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="project" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HrsGetHoursResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HrsGetHoursResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="FixGetCategoriesSoapIn">
+    <wsdl:part name="parameters" element="tns:FixGetCategories" />
+  </wsdl:message>
+  <wsdl:message name="FixGetCategoriesSoapOut">
+    <wsdl:part name="parameters" element="tns:FixGetCategoriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="FixGetIncidentlistSoapIn">
+    <wsdl:part name="parameters" element="tns:FixGetIncidentlist" />
+  </wsdl:message>
+  <wsdl:message name="FixGetIncidentlistSoapOut">
+    <wsdl:part name="parameters" element="tns:FixGetIncidentlistResponse" />
+  </wsdl:message>
+  <wsdl:message name="FixGetIncidentSoapIn">
+    <wsdl:part name="parameters" element="tns:FixGetIncident" />
+  </wsdl:message>
+  <wsdl:message name="FixGetIncidentSoapOut">
+    <wsdl:part name="parameters" element="tns:FixGetIncidentResponse" />
+  </wsdl:message>
+  <wsdl:message name="FixSendNewIncidentSoapIn">
+    <wsdl:part name="parameters" element="tns:FixSendNewIncident" />
+  </wsdl:message>
+  <wsdl:message name="FixSendNewIncidentSoapOut">
+    <wsdl:part name="parameters" element="tns:FixSendNewIncidentResponse" />
+  </wsdl:message>
+  <wsdl:message name="FixGetSalespersonsSoapIn">
+    <wsdl:part name="parameters" element="tns:FixGetSalespersons" />
+  </wsdl:message>
+  <wsdl:message name="FixGetSalespersonsSoapOut">
+    <wsdl:part name="parameters" element="tns:FixGetSalespersonsResponse" />
+  </wsdl:message>
+  <wsdl:message name="HrsValidateUserSoapIn">
+    <wsdl:part name="parameters" element="tns:HrsValidateUser" />
+  </wsdl:message>
+  <wsdl:message name="HrsValidateUserSoapOut">
+    <wsdl:part name="parameters" element="tns:HrsValidateUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="HrsGetDepartmentsSoapIn">
+    <wsdl:part name="parameters" element="tns:HrsGetDepartments" />
+  </wsdl:message>
+  <wsdl:message name="HrsGetDepartmentsSoapOut">
+    <wsdl:part name="parameters" element="tns:HrsGetDepartmentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="HrsGetProjectsSoapIn">
+    <wsdl:part name="parameters" element="tns:HrsGetProjects" />
+  </wsdl:message>
+  <wsdl:message name="HrsGetProjectsSoapOut">
+    <wsdl:part name="parameters" element="tns:HrsGetProjectsResponse" />
+  </wsdl:message>
+  <wsdl:message name="HrsGetTasksSoapIn">
+    <wsdl:part name="parameters" element="tns:HrsGetTasks" />
+  </wsdl:message>
+  <wsdl:message name="HrsGetTasksSoapOut">
+    <wsdl:part name="parameters" element="tns:HrsGetTasksResponse" />
+  </wsdl:message>
+  <wsdl:message name="HrsGetHoursSoapIn">
+    <wsdl:part name="parameters" element="tns:HrsGetHours" />
+  </wsdl:message>
+  <wsdl:message name="HrsGetHoursSoapOut">
+    <wsdl:part name="parameters" element="tns:HrsGetHoursResponse" />
+  </wsdl:message>
+  <wsdl:portType name="PereladaOraWSSoap">
+    <wsdl:operation name="FixGetCategories">
+      <wsdl:input message="tns:FixGetCategoriesSoapIn" />
+      <wsdl:output message="tns:FixGetCategoriesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FixGetIncidentlist">
+      <wsdl:input message="tns:FixGetIncidentlistSoapIn" />
+      <wsdl:output message="tns:FixGetIncidentlistSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FixGetIncident">
+      <wsdl:input message="tns:FixGetIncidentSoapIn" />
+      <wsdl:output message="tns:FixGetIncidentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FixSendNewIncident">
+      <wsdl:input message="tns:FixSendNewIncidentSoapIn" />
+      <wsdl:output message="tns:FixSendNewIncidentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FixGetSalespersons">
+      <wsdl:input message="tns:FixGetSalespersonsSoapIn" />
+      <wsdl:output message="tns:FixGetSalespersonsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HrsValidateUser">
+      <wsdl:input message="tns:HrsValidateUserSoapIn" />
+      <wsdl:output message="tns:HrsValidateUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HrsGetDepartments">
+      <wsdl:input message="tns:HrsGetDepartmentsSoapIn" />
+      <wsdl:output message="tns:HrsGetDepartmentsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HrsGetProjects">
+      <wsdl:input message="tns:HrsGetProjectsSoapIn" />
+      <wsdl:output message="tns:HrsGetProjectsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HrsGetTasks">
+      <wsdl:input message="tns:HrsGetTasksSoapIn" />
+      <wsdl:output message="tns:HrsGetTasksSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HrsGetHours">
+      <wsdl:input message="tns:HrsGetHoursSoapIn" />
+      <wsdl:output message="tns:HrsGetHoursSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="PereladaOraWSSoap" type="tns:PereladaOraWSSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="FixGetCategories">
+      <soap:operation soapAction="http://perelada.com/FixGetCategories" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FixGetIncidentlist">
+      <soap:operation soapAction="http://perelada.com/FixGetIncidentlist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FixGetIncident">
+      <soap:operation soapAction="http://perelada.com/FixGetIncident" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FixSendNewIncident">
+      <soap:operation soapAction="http://perelada.com/FixSendNewIncident" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FixGetSalespersons">
+      <soap:operation soapAction="http://perelada.com/FixGetSalespersons" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HrsValidateUser">
+      <soap:operation soapAction="http://perelada.com/HrsValidateUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HrsGetDepartments">
+      <soap:operation soapAction="http://perelada.com/HrsGetDepartments" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HrsGetProjects">
+      <soap:operation soapAction="http://perelada.com/HrsGetProjects" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HrsGetTasks">
+      <soap:operation soapAction="http://perelada.com/HrsGetTasks" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HrsGetHours">
+      <soap:operation soapAction="http://perelada.com/HrsGetHours" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="PereladaOraWSSoap12" type="tns:PereladaOraWSSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="FixGetCategories">
+      <soap12:operation soapAction="http://perelada.com/FixGetCategories" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FixGetIncidentlist">
+      <soap12:operation soapAction="http://perelada.com/FixGetIncidentlist" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FixGetIncident">
+      <soap12:operation soapAction="http://perelada.com/FixGetIncident" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FixSendNewIncident">
+      <soap12:operation soapAction="http://perelada.com/FixSendNewIncident" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FixGetSalespersons">
+      <soap12:operation soapAction="http://perelada.com/FixGetSalespersons" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HrsValidateUser">
+      <soap12:operation soapAction="http://perelada.com/HrsValidateUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HrsGetDepartments">
+      <soap12:operation soapAction="http://perelada.com/HrsGetDepartments" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HrsGetProjects">
+      <soap12:operation soapAction="http://perelada.com/HrsGetProjects" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HrsGetTasks">
+      <soap12:operation soapAction="http://perelada.com/HrsGetTasks" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HrsGetHours">
+      <soap12:operation soapAction="http://perelada.com/HrsGetHours" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PereladaOraWS">
+    <wsdl:port name="PereladaOraWSSoap" binding="tns:PereladaOraWSSoap">
+      <soap:address location="http://dccverp.dtc.grupperalada.com/PereladaWS/PereladaOraWS.asmx" />
+    </wsdl:port>
+    <wsdl:port name="PereladaOraWSSoap12" binding="tns:PereladaOraWSSoap12">
+      <soap12:address location="http://dccverp.dtc.grupperalada.com/PereladaWS/PereladaOraWS.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

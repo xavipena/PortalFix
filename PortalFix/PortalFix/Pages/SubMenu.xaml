@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:model="clr-namespace:PortalFix"
+             xmlns:viewModel="clr-namespace:PortalFix.ViewModels"
+             x:DataType="viewModel:SubMenuViewModel"
+             x:Class="PortalFix.Pages.SubMenu">
+    <ContentPage.Content>
+        <StackLayout Margin="20,35,20,25"
+                     Orientation="Vertical"
+                     HorizontalOptions="Center">
+            <Label Text="{Binding PageTitle}" 
+                   FontSize="40"
+                   HorizontalOptions="Center"/>
+            <Label Text="{Binding PageSubtitle}" 
+                   FontSize="20"
+                   HorizontalOptions="Center"/>
+            <BoxView HeightRequest="10"/>
+            <ListView
+                    HasUnevenRows="true"
+                    HeightRequest="300"
+                    IsGroupingEnabled="false"
+                    ItemSelected="Handle_ItemSelected"
+                    SeparatorVisibility="None"
+                    ItemsSource="{Binding SubMenu}">
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="model:MenuOption">
+                        <ViewCell>
+                            <Frame CornerRadius="10" 
+                                   OutlineColor="CadetBlue" 
+                                   BackgroundColor="LightBlue"
+                                   IsClippedToBounds="True"
+                                   Padding="0"
+                                   Margin="0,5,0,5">
+                                <StackLayout Margin="20,10,10,10"
+                                         WidthRequest="700"
+                                         HeightRequest="80"
+                                         Orientation="Horizontal" 
+                                         HorizontalOptions="Start">
+                                    <ImageButton Margin="0,0,10,0"
+                                             Source="{Binding iimageSource}" 
+                                             BackgroundColor="Transparent"
+                                             WidthRequest="80"
+                                             HeightRequest="80"
+                                             FlexLayout.AlignSelf="Center"
+                                             FlexLayout.Grow="1"
+                                             Aspect="AspectFit" />
+                                    <Label Text="{Binding description}" 
+                                       VerticalOptions="Center"
+                                       FontSize="20"/>
+                                </StackLayout>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
+    

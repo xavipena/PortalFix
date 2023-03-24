@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:model="clr-namespace:PortalFix"
+             xmlns:viewModel="clr-namespace:PortalFix.ViewModels" 
+             x:DataType="viewModel:MainMenuViewModel"
+             x:Class="PortalFix.Pages.MainMenu">
+    <ContentPage.Content>
+        <StackLayout Margin="20,35,20,25"
+                     Orientation="Vertical"
+                     HorizontalOptions="Center">
+            <Label Text="Menú principal" 
+                   FontSize="40"
+                   HorizontalOptions="Center"/>
+            <Label Text="Selecciona el tipo de incidencia con el Portal" 
+                   FontSize="20"
+                   HorizontalOptions="Center"/>
+            <BoxView HeightRequest="10"/>
+            <ListView
+                    HasUnevenRows="true"
+                    HeightRequest="300"
+                    IsGroupingEnabled="false"
+                    ItemSelected="Handle_ItemSelected"
+                    SeparatorVisibility="None"
+                    ItemsSource="{Binding MainMenuOps}">
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="model:MenuOption">
+                        <ViewCell>
+                            <Frame CornerRadius="10" 
+                                   OutlineColor="CadetBlue" 
+                                   BackgroundColor="{Binding backColor}"
+                                   IsClippedToBounds="True"
+                                   Padding="0"
+                                   Margin="0,5,0,5">
+                                <StackLayout Margin="20,10,10,10"
+                                         WidthRequest="700"
+                                         HeightRequest="80"
+                                         Orientation="Horizontal" 
+                                         HorizontalOptions="Start">
+                                    <ImageButton Margin="10,0,10,0"
+                                                 Source="{Binding iimageSource}" 
+                                                 BackgroundColor="Transparent"
+                                                 WidthRequest="70"
+                                                 HeightRequest="70"
+                                                 FlexLayout.AlignSelf="Center"
+                                                 FlexLayout.Grow="1"
+                                                 Aspect="AspectFit" />
+                                    <Label Text="{Binding description}" 
+                                       VerticalOptions="Center"
+                                       FontSize="25"/>
+                                    <Label Text="{Binding count}" 
+                                       VerticalOptions="Center"
+                                           HorizontalOptions="EndAndExpand"
+                                       FontSize="25"/>
+                                </StackLayout>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Label Text="Copyright (C) 2021 Grup Peralada" 
+                   FontSize="10"
+                   HorizontalOptions="Center"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
+    

@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModel="clr-namespace:PortalFix.ViewModels" 
+             x:DataType="viewModel:ReportViewModel"
+             mc:Ignorable="d"
+             x:Class="PortalFix.Pages.Report">
+    <ContentPage.Content>
+        <StackLayout Margin="20,35,20,25"
+                     Orientation="Vertical"
+                     HorizontalOptions="FillAndExpand">
+            <Label Text="Envía un correo con la incidencia" 
+                   FontSize="30"
+                   HorizontalOptions="Center"/>
+            <Label Text="Agente"
+                FontSize="20" FontAttributes="Bold"
+                HorizontalOptions="Start" />
+            <Picker Title="¿Quién eres?" 
+                    ItemsSource="{Binding SalespersonList}" 
+                    ItemDisplayBinding="{Binding spName}"
+                    SelectedItem="{Binding SelectedSalesperson}" />
+            <Label Text="Asunto"
+                FontSize="20" FontAttributes="Bold"
+                HorizontalOptions="Start" />
+            <Entry x:Name="Subject" 
+                   Text="{Binding TxtSubject}" 
+                   Placeholder="De qué va"   
+                   PlaceholderColor="Gray" 
+                   MinimumHeightRequest="50"
+                   TextColor="Black"/>
+            <Label Text="Cuándo se produce"
+                FontSize="20" FontAttributes="Bold"
+                HorizontalOptions="Start" />
+            <Editor x:Name="When" 
+                   Text="{Binding TxtWhen}" 
+                   Placeholder="Cuándo y dónde se produce"   
+                   PlaceholderColor="Gray" 
+                   MinimumHeightRequest="150"
+                    AutoSize="TextChanges"
+                   TextColor="Black"/>
+            <Label Text="Texto"
+                FontSize="20" FontAttributes="Bold"
+                HorizontalOptions="Start" />
+            <Editor x:Name="Body" 
+                   Text="{Binding TxtBody}" 
+                   Placeholder="Descripción de la incidencia"   
+                   PlaceholderColor="Gray" 
+                   MinimumHeightRequest="150"
+                   TextColor="Black"/>
+            <BoxView HeightRequest="20"/>
+            <ImageButton Margin="0,0,10,0"
+                         Source="actionSend.png" 
+                         BackgroundColor="Transparent"
+                         WidthRequest="80"
+                         HeightRequest="80"
+                         FlexLayout.AlignSelf="Center"
+                         FlexLayout.Grow="1"
+                         Clicked="ImageButton_Clicked"
+                         Aspect="AspectFit" />
+            <StackLayout Margin="20,35,20,25"
+                         Orientation="Horizontal"
+                         HorizontalOptions="Center">
+                <Image Margin="0,0,5,0"
+                   Source="info.png" 
+                   BackgroundColor="Transparent"
+                   WidthRequest="80"
+                   HeightRequest="80"
+                   FlexLayout.AlignSelf="Center"
+                   FlexLayout.Grow="1"
+                   Aspect="AspectFit" />
+                <Label Text="Este mensaje sirve para añadir la incidencia a la base de datos de conocimiento, no implica un respuesta inmediata, aunque el menaje será revisado."
+                       FontSize="18"
+                       HorizontalOptions="Start"
+                       VerticalTextAlignment="Center"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
+    
