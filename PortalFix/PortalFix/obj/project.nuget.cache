@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "dgSpecHash": "+TraRKNbzd+Eu3ahjrHntehA2a2rgo66vxgYCvHCQuG6pMBwfLwaeDb2qmgGsh7Chx2tkD4vW1hn/W8jCHqmZQ==",
+  "success": true,
+  "projectFilePath": "C:\\xcavas\\apps\\PortalFix\\PortalFix\\PortalFix\\PortalFix.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\xpena\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\xpena\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\xpena\\.nuget\\packages\\refractored.mvvmhelpers\\1.6.2\\refractored.mvvmhelpers.1.6.2.nupkg.sha512",
+    "C:\\Users\\xpena\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\xpena\\.nuget\\packages\\system.valuetuple\\4.5.0\\system.valuetuple.4.5.0.nupkg.sha512",
+    "C:\\Users\\xpena\\.nuget\\packages\\xamarin.essentials\\1.6.1\\xamarin.essentials.1.6.1.nupkg.sha512",
+    "C:\\Users\\xpena\\.nuget\\packages\\xamarin.forms\\5.0.0.2012\\xamarin.forms.5.0.0.2012.nupkg.sha512"
+  ],
+  "logs": []
+}
